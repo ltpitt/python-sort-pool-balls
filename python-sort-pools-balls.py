@@ -19,8 +19,7 @@ class Pool(object):
         This function returns a list containing
         a shuffled pool balls set
         """
-        balls = []
-        [balls.append([number]) for number in range(1, 16)]
+        balls = [[number] for number in range(1, 16)]
         for ball in balls:
             if ball[0] < 9:
                 ball.append("Solid")
@@ -32,19 +31,19 @@ class Pool(object):
     def sort_ball_set(self, unsorted_balls):
         """
         This function returns a
-        list of sorted balls from a list of
+        grid of sorted balls from a list of
         shuffled balls
         """
-        # Ball 1 always goes in 1st place
+        # Ball 1 always goes in 1st row, 1st column
         self.grid[0][0] = unsorted_balls.pop(unsorted_balls.index([1, 'Solid']))
-        # Ball 8 always goes in the 2nd row, in the middle
+        # Ball 8 always goes in the 3rd row, 2nd column
         self.grid[2][1] = unsorted_balls.pop(unsorted_balls.index([8, 'Solid']))
+
         # Creating an empty list for solid balls
         unsorted_solid_balls = []
-        # Same thing but for striped balls
+        # Same thing for striped balls
         unsorted_striped_balls = []
-
-        # Now it is time to divide solid balls from striped ones
+        # Let's divide solid balls from striped ones
         for ball in unsorted_balls:
             if ball[1] == 'Solid':
                 unsorted_solid_balls.append(ball)
