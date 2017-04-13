@@ -5,7 +5,7 @@ class Pool(object):
     Simple object that allows to sort
     """
 
-    def __init__(self):
+    def __init__(self):asdasdasdads
         """
         During initalization the final grid containing
         ordered balls is created
