@@ -1,4 +1,4 @@
-# Class to sort Pool balls
+# A Python class to sort Pool balls
 
 Team Code challenge to create and sort a set of pool balls.
 We don't strive for the 'best' solution, it's not a competition. 
